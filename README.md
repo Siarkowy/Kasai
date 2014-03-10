@@ -13,7 +13,7 @@ intuitive keywords.
 ```lua
 npc 15371 Arcatraz Sentinel
 {
-    timerooc 0.5 {
+    timerooc 0.5s {
         normal { cast 36716 self interrupt|triggered }
         heroic { cast 38828 self interrupt|triggered }
     }
@@ -23,7 +23,7 @@ npc 15371 Arcatraz Sentinel
         heroic { morph 5 setphase 1 }
     }
 
-    repeatable timer 5 10 10 15 { threatallpct -100 }
+    repeatable timer 5s 10s 10s 15s { threatallpct -100 }
 
     # phase 1
 
@@ -34,7 +34,7 @@ npc 15371 Arcatraz Sentinel
     # phase 2
 
     notphase 1 {
-        repeatable timer 0 0 8 8 {
+        repeatable timer 0 0 8s 8s {
             normal { cast 36719 self triggered }
             heroic { cast 38830 self triggered }
         }

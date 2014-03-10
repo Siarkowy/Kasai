@@ -44,9 +44,10 @@ if ($code = isset($_REQUEST['code']) ? htmlspecialchars($_REQUEST['code']) : nul
 <?php endif ?>
         <form action="?" method="post" role="form">
             <textarea class="form-control" rows="15" name="code" accesskey="c">
-<?php if (@$code): echo @$code; else: ?>npc 15371 Arcatraz Sentinel
+<?php if (@$code): echo @$code; else: ?>
+npc 15371 Arcatraz Sentinel
 {
-    timerooc 0.5 {
+    timerooc 0.5s {
         normal { cast 36716 self interrupt|triggered }
         heroic { cast 38828 self interrupt|triggered }
     }
@@ -56,7 +57,7 @@ if ($code = isset($_REQUEST['code']) ? htmlspecialchars($_REQUEST['code']) : nul
         heroic { morph 5 setphase 1 }
     }
 
-    repeatable timer 5 10 10 15 { threatallpct -100 }
+    repeatable timer 5s 10s 10s 15s { threatallpct -100 }
 
     # phase 1
 
@@ -67,7 +68,7 @@ if ($code = isset($_REQUEST['code']) ? htmlspecialchars($_REQUEST['code']) : nul
     # phase 2
 
     notphase 1 {
-        repeatable timer 0 0 8 8 {
+        repeatable timer 0 0 8s 8s {
             normal { cast 36719 self triggered }
             heroic { cast 38830 self triggered }
         }

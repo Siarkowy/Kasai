@@ -350,6 +350,12 @@ class Kasai
         // get rid of comments
         $kai = preg_replace('/\s+#.+/', '', $kai);
 
+        // expand seconds to milliseconds
+        $kai = preg_replace_callback('/([\d.]+)[ks]/', function($m) {
+            return $m[1] * 1000;
+        }, $kai);
+        
+
         // substitute events
         foreach (Kasai::$events as $type => $id)
             $kai = preg_replace("/{$type}/", "event {$id}", $kai);
