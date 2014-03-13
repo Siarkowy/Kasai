@@ -108,7 +108,7 @@ class Kasai
         'killedmonster'         => 33,
         'setinstdata'           => 34,
         'setinstdata64'         => 35,
-        'updatetemplate'        => 36,
+        'setentry'              => 36,
         'die'                   => 37,
         'docombatpulse'         => 38,
         'callforhelp'           => 39,
